@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SmartLiving | Rental Lab</title>
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./vendor/ethers.umd.min.js"></script>
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="brand">SmartLiving Property · Sepolia</p>
+      <h1>ระบบทดลองจัดการสัญญาเช่า</h1>
+      <p>ลงทะเบียนห้อง ทำสัญญา และทดลองจัดการเงินประกันด้วย Test ETH</p>
+    </header>
+    <section class="connection" aria-labelledby="connect-title">
+      <h2 id="connect-title">เชื่อมต่อระบบ</h2>
+      <div class="connection-row">
+        <label for="contract-address">ที่อยู่ Smart Contract บน Sepolia
+          <input id="contract-address" placeholder="0x…" autocomplete="off" spellcheck="false">
+        </label>
+        <button id="connect" type="button">เชื่อมต่อ Wallet</button>
+      </div>
+      <p id="wallet" class="muted">ยังไม่ได้เชื่อมต่อ Wallet</p>
+      <p class="muted">ข้อมูลที่บันทึกบน Sepolia เปิดเผยต่อสาธารณะ กรุณาใช้ข้อมูลสมมติ</p>
+    </section>
+    <div class="feedback" aria-label="ผลการทำรายการ">
+      <p id="status" role="status" aria-live="polite">ระบุที่อยู่ Contract แล้วเชื่อมต่อ Wallet เพื่อเริ่มทดลอง</p>
+      <a id="tx-link" hidden target="_blank" rel="noopener noreferrer">ดูธุรกรรมบน Sepolia Etherscan ↗</a>
+    </div>
+    <noscript>เปิด JavaScript เพื่อใช้งานหน้าเว็บ</noscript>
+    <div id="panels" class="grid"></div>
+  </main>
+</body>
+</html>
